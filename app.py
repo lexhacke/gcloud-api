@@ -19,7 +19,3 @@ def get_answer(question_context: QuestionContext):
     context = question_context.context
     answer = pipeline(question, context, no_none=True)
     return {"answer": answer if answer is not None else "No answer found."}
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
